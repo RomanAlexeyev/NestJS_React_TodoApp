@@ -103,7 +103,6 @@ const TodoModal = ({ type, todo, setShowModal, refetch }: ModalProps) => {
             value={inputBody.body}
             onChange={(e) => onChange(e, 'body')}
           />
-          <span className="todo-modal-input-divider"></span>
           <div className="todo-modal-input-date-container">
             <input
               type="date"

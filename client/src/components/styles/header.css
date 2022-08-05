@@ -17,6 +17,17 @@
     font-size: 14px;
 }
 
+@media (max-width: 768px) {
+    .current-date {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .current-todos{
+        font-size: 10px;
+    }
+}
+
 .button-container {
     flex: 1;
     display: flex;

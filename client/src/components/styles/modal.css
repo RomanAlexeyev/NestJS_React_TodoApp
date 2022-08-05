@@ -2,7 +2,7 @@
     width: 85%;
     background-color: white;
     position: absolute;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0%);
     left: 50%;
     top: 50%;
     background: rgba(253, 253, 253, 0.6);
@@ -10,6 +10,16 @@
     border-radius: 15px;
     padding: 5%;
     backdrop-filter: blur(8px);
+    opacity: 0;
+    animation: slideInFromBottom 0.5s ease-in-out forwards;
+}
+
+@keyframes slideInFromBottom {
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);       
+    }
+    
 }
 
 .todo-modal-title {
@@ -81,13 +91,16 @@
 }
 
 .todo-modal-input-body {
-    flex: 4
+    flex: 4;
+    margin-right: 10px;
 }
 
 .todo-modal-input-date-container {
     flex: 1;
+    padding-left: 5px;
     display: flex;
     justify-content: center;
+    border-left: 1px solid var(--secondary);
 }
 
 .todo-modal-validation {
@@ -102,6 +115,7 @@
     outline: 0;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
+    background-color: transparent;
 }
 
 .custom-input:focus {

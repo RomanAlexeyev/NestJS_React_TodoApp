@@ -48,26 +48,41 @@ const TodoItem = ({ todo, refetch, setShowModal }: ItemProps) => {
     <div className="todo-item">
       <div className="todo-item-inner">
         <div className="todo-item-complete-button-container">
-          <button className={`todo-item-complete-button ${todo.completed ? "completed" : ""}`} onClick={() => completeHandler()}>
+          <button
+            className={`todo-item-complete-button ${
+              todo.completed ? 'completed' : ''
+            }`}
+            onClick={() => completeHandler()}
+          >
             <img src={tick} alt="" className="tick-icon icon" />
           </button>
         </div>
         <div className="todo-item-body">
-          <span>
-            <div className={`todo-item-body-liner ${todo.completed ? "completed" : ""}`}></div>
-            {todo.body}
-          </span>
+          <p className="body-text">
+            {todo.body}{' '}
+            <div
+              className={`todo-item-body-liner ${
+                todo.completed ? 'completed' : ''
+              }`}
+            ></div>
+          </p>
         </div>
         <div className="todo-item-deadline">{toString(todo.deadline)}</div>
         <div className="todo-item-edit-button-container">
-          <button className="todo-item-edit-button" onClick={() => setShowModal({type: 'edit', id: todo._id})}>
+          <button
+            className="todo-item-edit-button"
+            onClick={() => setShowModal({ type: 'edit', id: todo._id })}
+          >
             <img src={edit} alt="" className="edit-icon icon" />
           </button>
         </div>
       </div>
       <div className="todo-item-delete-button-container">
         {todo.completed && (
-          <button className="todo-item-delete-button" onClick={() => removeHandler()}>
+          <button
+            className="todo-item-delete-button"
+            onClick={() => removeHandler()}
+          >
             <img src={remove} alt="" className="remove-icon icon" />
           </button>
         )}
