@@ -1,0 +1,131 @@
+.todo-modal {
+    width: 85%;
+    background-color: white;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    background: rgba(253, 253, 253, 0.6);
+    box-shadow: 0px 0px 100px -50px rgb(42, 48, 102);
+    border-radius: 15px;
+    padding: 5%;
+    backdrop-filter: blur(8px);
+}
+
+.todo-modal-title {
+    font-weight: 400;
+    color: var(--primary);
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.todo-modal-close {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 40px;
+    cursor: pointer;
+}
+
+.todo-modal-close::before,
+.todo-modal-close::after {
+    content: " ";
+    width: 1px;
+    height: 100%;
+    background-color: var(--primary);
+    position: absolute;
+    left: 50%;
+}
+
+.todo-modal-close::before {
+    transform: translate(-50%, 0) rotate(45deg);
+}
+
+.todo-modal-close::after {
+    transform: translate(-50%, 0) rotate(-45deg);
+}
+
+.todo-modal-hints {
+    display: flex;
+    color: var(--secondary);
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+}
+
+.todo-modal-hint-body {
+    flex: 4
+}
+
+.todo-modal-hint-date {
+    flex: 1;
+    text-align: center;
+}
+
+.todo-modal-input {
+    display: flex;
+    padding: 15px 10px;
+    border: 1px solid var(--secondary);
+    border-radius: 10px;
+    position: relative;
+}
+
+.todo-modal-input-divider {
+    height: 70%;
+    position: absolute;
+    top: 15%;
+    right: 21%;
+    border-left: 1px solid var(--secondary);
+}
+
+.todo-modal-input-body {
+    flex: 4
+}
+
+.todo-modal-input-date-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.todo-modal-validation {
+    margin-top: 10px;
+    font-size: 12px;
+    height: 15px;
+    color: rgb(245, 65, 65);
+}
+
+.custom-input {
+    border: 0;
+    outline: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.custom-input:focus {
+    outline: none !important;
+}
+
+.custom-input::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+.submit-button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: var(--primary);
+    color: white;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    border-radius: 5px;
+    float: right;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: var(--lightened);
+}

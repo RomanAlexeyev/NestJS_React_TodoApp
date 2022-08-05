@@ -14,7 +14,7 @@ export class Todo {
 
     @Field(() => Date)
     @Prop()
-    createdAt: Date;
+    deadline: Date;
     
     @Field(() => Boolean)
     @Prop()

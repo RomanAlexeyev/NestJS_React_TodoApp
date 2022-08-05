@@ -1,16 +1,22 @@
 import { Field, InputType } from "@nestjs/graphql";
 
-@InputType('TodoInputType')
-export class TodoInputType {
+@InputType('AddTodoInput')
+export class AddTodoInput {
     @Field()
     body: string;
+
+    @Field()
+    deadline: string;
 }
 
-@InputType('UpdateTodoInputType')
+@InputType('UpdateTodoInput')
 export class UpdateTodoInput {
 
     @Field({ nullable: true })
     body?: string;
+
+    @Field({ nullable: true })
+    deadline?: string;
 
     @Field({ nullable: true })
     completed?: boolean

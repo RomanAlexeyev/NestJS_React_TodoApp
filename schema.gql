@@ -5,7 +5,7 @@
 type Todo {
   _id: String!
   body: String!
-  createdAt: DateTime!
+  deadline: DateTime!
   completed: Boolean!
 }
 
@@ -19,16 +19,18 @@ type Query {
 }
 
 type Mutation {
-  addTodo(input: TodoInputType!): Todo!
-  updateTodo(id: String!, input: UpdateTodoInputType!): Todo!
+  addTodo(input: AddTodoInput!): Todo!
+  updateTodo(id: String!, input: UpdateTodoInput!): Todo!
   deleteTodo(id: String!): Todo!
 }
 
-input TodoInputType {
+input AddTodoInput {
   body: String!
+  deadline: String!
 }
 
-input UpdateTodoInputType {
+input UpdateTodoInput {
   body: String
+  deadline: String
   completed: Boolean
 }

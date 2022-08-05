@@ -2,7 +2,7 @@ import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { Injectable } from '@nestjs/common';
 import { Todo, TodoDocument } from './todo.schema';
-import { TodoInputType, UpdateTodoInput } from './todo.dto';
+import { AddTodoInput, UpdateTodoInput } from './todo.dto';
 
 @Injectable()
 export class TodoService {
@@ -12,10 +12,10 @@ export class TodoService {
         return this.todoModel.find().exec();
     }
 
-    async create(input: TodoInputType): Promise<Todo> {
+    async create(input: AddTodoInput): Promise<Todo> {
         const createdTodo = new this.todoModel(input);
-        createdTodo.createdAt = new Date();
         createdTodo.completed = false;
+        createdTodo.deadline = new Date(input.deadline);
         return createdTodo.save();
     }
 

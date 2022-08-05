@@ -1,6 +1,6 @@
 import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 import { TodoService } from './todo.service';
-import { TodoInputType, UpdateTodoInput } from './todo.dto';
+import { AddTodoInput, UpdateTodoInput } from './todo.dto';
 import { Todo } from './todo.schema';
 
 @Resolver()
@@ -13,7 +13,7 @@ export class TodoResolver {
     }
 
     @Mutation(() => Todo)
-    async addTodo(@Args('input') input: TodoInputType) {
+    async addTodo(@Args('input') input: AddTodoInput) {
         return this.todoService.create(input);
     }
 
